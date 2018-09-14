@@ -1,0 +1,50 @@
+<div class="columns is-centered">
+  <div class="column is-one-third"
+       [class.is-hidden]="submitted">
+    <div class="top-space">
+      <div class="title has-text-info">Oganization name</div>
+      <div class="control has-icons-left">
+        <input type="text"
+               [value]="name"
+               (input)="name = $event.target.value"
+               placeholder="name"
+               class="input is-info is-rounded">
+        <span class="icon is-small is-left">
+          <i class="fas fa-users"></i>
+        </span>
+      </div>
+    </div>
+    <div class="top-space">
+      <div class="title has-text-info">Owner's email</div>
+      <div class="control has-icons-left">
+        <input type="text"
+               [value]="email"
+               (input)="email = $event.target.value"
+               placeholder="email"
+               class="input is-info is-rounded is-rounded">
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+      </div>
+    </div>
+    <div class="top-space">
+      <input type="button"
+             value="Submit"
+             (click)="onClick()"
+             class="button is-primary is-large">
+    </div>
+  </div>
+  <div class="column is-half"
+       [class.is-hidden]="!submitted">
+    <div [class.is-hidden]="failed">
+      The organization "{{name}}" has been prepared. For security reasons, a confirmation email has been dipatched to the address
+      {{email}}. Please check your email and verify the request by clicking on the link provided in the message. If no email
+      appears, please check the spam folder and the entered email address. This window may be closed now.</div>
+    <div [class.is-hidden]="!failed">
+      The registration failed. Please verify that the email address is valid. This window needs to be reloaded.</div>
+    <div class="top-space">
+      <a href="#"
+         class="button is-primary is-large">Home</a>
+    </div>
+  </div>
+</div>

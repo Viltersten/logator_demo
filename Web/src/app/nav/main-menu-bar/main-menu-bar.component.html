@@ -1,0 +1,26 @@
+<div [class.is-hidden]="!shown"
+     class="outer columns">
+  <a (click)="onClick('main')"
+     class="column button is-large is-offset-2 is-link is-outlined is-inverted">
+    <i class="fas fa-map"></i>
+  </a>
+  <a (click)="onClick('list')"
+     class="column button is-large is-offset-1 is-link is-outlined is-inverted">
+    <i class="fas fa-list"></i>
+  </a>
+  <a (click_)="onClick('schedule')"
+     disabled
+     class="column button is-large is-offset-1 is-link is-outlined is-inverted">
+    <i class="fas fa-calendar-alt"></i>
+  </a>
+  <a (click)="onClick('update')"
+     class="column button is-large is-offset-1 is-link is-outlined is-inverted">
+    <i class="fas fa-user"></i>
+  </a>
+  <a (click)="onClick('logout')"
+     class="column button is-large is-offset-1 is-link is-outlined is-inverted">
+    <i class="fas fa-sign-out-alt"></i>
+  </a>
+  <div class="column is-2"></div>
+  <hr>
+</div>

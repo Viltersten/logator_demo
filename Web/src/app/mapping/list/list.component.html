@@ -1,0 +1,27 @@
+<div class="columns has-text-centered">
+  <table class="table column is-striped is-hoverable">
+    <thead class="thead">
+      <th class="th">#</th>
+      <th class="th">Name</th>
+      <th class="th">Phone</th>
+      <th class="th">Email</th>
+      <th class="th">Access</th>
+      <th class="th">Position</th>
+      <th class="th">Action</th>
+    </thead>
+    <tr *ngFor="let member of members; let i = index;"
+        (click)="onClick(member.id)"
+        class="tr">
+      <td class="td">{{i+1}}:</td>
+      <td class="td">{{member.firstName}}, {{member.lastName}}</td>
+      <td class="td">{{member.phone}}</td>
+      <td class="td">{{member.email}}</td>
+      <td class="td">level {{member.privilege}}</td>
+      <td class="td">{{member.address}} ({{member.lng | number:"1.2-2"}}/{{member.lat | number:"1.2-2"}})</td>
+      <td class="td has-text-right">
+        <i class="fas fa-edit"></i>
+      </td>
+    </tr>
+  </table>
+  <!-- <div class="column is-2"></div> -->
+</div>

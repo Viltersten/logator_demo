@@ -1,0 +1,38 @@
+<div class="columns is-centered">
+  <div class="column is-one-third"
+       [class.is-hidden]="submitted">
+    <div class="top-space">
+      <div class="title has-text-info">Password</div>
+      <div class="control has-icons-left">
+        <input type="password"
+               [value]="password"
+               (input)="password = $event.target.value"
+               placeholder="password"
+               class="input is-info is-rounded">
+        <span class="icon is-small is-left">
+          <i class="fas fa-users"></i>
+        </span>
+      </div>
+    </div>
+    <div class="top-space">
+      <input type="button"
+             value="Update"
+             (click)="onClick()"
+             class="button is-primary is-large">
+    </div>
+  </div>
+  <div class="column is-half"
+       [class.is-hidden]="!submitted">
+    <div [class.is-hidden]="failed">
+      The password for member with email "{{email}}" has been changed. For security reasons, it remains hidden and will not be
+      displayed nor sent in the confirmation. This window may be closed now.</div>
+    <div [class.is-hidden]="!failed">
+      The password update failed. Please verify that the link in the email message has not been altered. This window may be closed
+      now.
+    </div>
+    <div class="top-space">
+      <a href="#"
+         class="button is-primary is-large">Home</a>
+    </div>
+  </div>
+</div>

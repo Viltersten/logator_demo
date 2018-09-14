@@ -1,0 +1,88 @@
+<form [formGroup]="formData">
+
+  <div class="columns is-centered">
+
+    <div class="column is-four-fifths">
+
+      <div class="columns">
+
+        <div class="top-space column is-half">
+          <div class="title has-text-info">Email</div>
+          <div class="control has-icons-left">
+
+            <input type="text"
+                   autofocus
+                   placeholder="email"
+                   formControlName="email"
+                   class="input is-info is-rounded">
+            <span class="icon is-small is-left">
+              <i class="fas fa-at"></i>
+            </span>
+          </div>
+          <div class="top-space title has-text-info">First name</div>
+          <div class="control has-icons-left">
+            <input type="text"
+                   autofocus
+                   placeholder="first name"
+                   formControlName="firstName"
+                   class="input is-info is-rounded">
+            <span class="icon is-small is-left">
+              <i class="fas fa-address-card"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="top-space column is-half">
+          <div class="title has-text-info">Phone</div>
+          <div class="control has-icons-left">
+            <input type="text"
+                   autofocus
+                   placeholder="phone"
+                   formControlName="phone"
+                   class="input is-info is-rounded">
+            <span class="icon is-small is-left">
+              <i class="fas fa-mobile"></i>
+            </span>
+          </div>
+          <div class="top-space title has-text-info">Last name</div>
+          <div class="control has-icons-left">
+            <input type="text"
+                   autofocus
+                   placeholder="last name"
+                   formControlName="lastName"
+                   class="input is-info is-rounded">
+            <span class="icon is-small is-left">
+              <i class="fas fa-address-card"></i>
+            </span>
+          </div>
+          <div class="top-space title has-text-info">Location</div>
+          <div class="control has-icons-left">
+            <input type="text"
+                   placeholder="location"
+                   formControlName="location"
+                   (keyup)="onType()"
+                   class="input is-info is-rounded is-rounded">
+            <span class="icon is-small is-left">
+              <i class="fas fa-globe"></i>
+            </span>
+          </div>
+          <div class="tops-space">
+            <div>{{locations[0]}} {{overhead}}</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="is-half">
+        <div class="top-space">
+          <input type="button"
+                 value="Submit"
+                 (click)="onClick($event)"
+                 class="button is-primary is-large">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</form>

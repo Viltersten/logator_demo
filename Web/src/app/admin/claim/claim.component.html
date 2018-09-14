@@ -1,0 +1,29 @@
+<div class="columns is-centered">
+  <div class="column is-half"
+       [class.is-hidden]="submitted">
+    <div>
+      Claim organization "{{name}}" with the email {{email}} as its owner. This operation can only be carried out once. The email
+      must not have been previously registered with another organization.</div>
+    <div>
+      <div class="top-space">
+        <input type="button"
+               value="Claim"
+               (click)="onClick()"
+               class="button is-primary is-large">
+      </div>
+    </div>
+  </div>
+  <div class="column is-half"
+       [class.is-hidden]="!submitted">
+    <div [class.is-hidden]="failed">
+      The organization "{{name}}" has been claimed. The owner is the user with the email address {{email}}. A message with a temporary
+      credentials has been dipatched and it is recommended to be altered. This window may be closed now.</div>
+    <div [class.is-hidden]="!failed">
+      The claim process failed. Please verify that the link in the email message has not been already used nor altered. This window
+      may be closed now.</div>
+    <div class="top-space">
+      <a href="#"
+         class="button is-primary is-large">Home</a>
+    </div>
+  </div>
+</div>

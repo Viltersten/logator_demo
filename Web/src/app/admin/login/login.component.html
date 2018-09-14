@@ -1,0 +1,35 @@
+<div class="columns is-centered">
+  <div class="column is-one-third">
+    <div class="top-space">
+      <div class="title has-text-info">Who are you?</div>
+      <div class="control has-icons-left">
+        <input type="text"
+               autofocus
+               placeholder="email or user name"
+               (keyup)="userName=$event.target.value"
+               class="input is-info is-rounded">
+        <span class="icon is-small is-left">
+          <i class="fas fa-at"></i>
+        </span>
+      </div>
+    </div>
+    <div class="top-space">
+      <div class="title has-text-info">What is your password?</div>
+      <div class="control has-icons-left">
+        <input type="password"
+               placeholder="password"
+               (keyup)="password=$event.target.value"
+               class="input is-info is-rounded is-rounded">
+        <span class="icon is-small is-left">
+          <i class="fas fa-question"></i>
+        </span>
+      </div>
+    </div>
+    <div class="top-space">
+      <input type="button"
+             value="Log in"
+             (click)="onClick()"
+             class="button is-primary is-large">
+    </div>
+  </div>
+</div>
